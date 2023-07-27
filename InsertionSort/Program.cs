@@ -39,9 +39,9 @@ namespace InsertionSort {
 			 */
 
 			int[] input = { 3, 7, 4, 8, 5, 2, 6, 8, 3, 1, 0 };
-            Console.WriteLine($"Input: \t\t\t{input.ConvertToString()}");
+			Console.WriteLine($"Input: \t\t\t{input.ConvertToString()}");
 
-            int[] ascending = SortAscending(input);
+			int[] ascending = SortAscending(input);
 			Console.WriteLine($"Sorted ascending: \t{ascending.ConvertToString()}");
 
 			int[] descending = SortDescending(input);
@@ -54,14 +54,16 @@ namespace InsertionSort {
 			// ordered sub-array already, which current size is 1.
 
 			// The algorithm, then, iterates over the entire array,
-			// starting from the second cell.
-
+			// starting from the second cell, and moving to the right.
 			for (int i = 1; i < array.Length; i++) {
-				T current = array[i]; // The current value to sort.
+				// "current" is the value to move into the sorted sub-array.
+				T current = array[i]; 
 				int j = i - 1;
 
-				// Shift to the right every cell which value is greater than "current".
+				// Compare "current" with the values to the left in the array
+				// until the correct position is found.
 				while (j >= 0 && array[j].CompareTo(current) > 0) {
+					// Shift to the right every cell which value is greater than "current".
 					array[j + 1] = array[j];
 
 					// Decrement j to check the next value to the left.
@@ -77,7 +79,7 @@ namespace InsertionSort {
 
 		private static T[] SortDescending<T>(T[] array) where T : IComparable<T> {
 			for (int i = 1; i < array.Length; i++) {
-				T current = array[i]; 
+				T current = array[i];
 				int j = i - 1;
 
 				// The only change to the algorithm is that now cells are shifted
