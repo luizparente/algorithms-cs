@@ -1,7 +1,8 @@
-﻿using Utilities;
+﻿using Utilities.Extensions;
 
-namespace InsertionSort {
-	internal class Program {
+namespace InsertionSort
+{
+    internal class Program {
 		static void Main(string[] args) {
 			/*
 			 * INSERTION SORT
@@ -60,13 +61,13 @@ namespace InsertionSort {
 				T current = array[i]; 
 				int j = i - 1;
 
-				// Compare "current" with the values to the left in the array
+				// Comparing "current" with the values to the left in the array
 				// until the correct position is found.
 				while (j >= 0 && array[j].CompareTo(current) > 0) {
-					// Shift to the right every cell which value is greater than "current".
+					// Shifting to the right every cell which value is greater than "current".
 					array[j + 1] = array[j];
 
-					// Decrement j to check the next value to the left.
+					// Decrementing j to check the next value to the left.
 					j--;
 				}
 
