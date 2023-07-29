@@ -47,17 +47,20 @@ namespace MergeSort
 			// Calculating middle cell index.
 			int middleIndex = (fromIndex + toIndex) / 2;
 			
-			// Sorting each half.
+			// The premise of divide-and-conquer algorithms is to pretend each sub-problem
+			// is a separate problem. Thus, each half is treated as an individual sub-array
+			// that needs to be sorted.
+
+			// Individually sorting each half of the array.
 			array = MergeSort(array, fromIndex, middleIndex);
 			array = MergeSort(array, middleIndex + 1, toIndex);
 
-			// The heart of this algorithm is in its merging sub-routine.
-			// The goal of the merging algorithm is to compare the two arrays,
-			// and one by one compare the values on each side. The lowest value of 
-			// each comparison is stored in the array in the correct, ordered position.
-			// This process continues until one of the sides runs out of values to compare.
+			// The heart of this algorithm is in its merging sub-routine, which is the last
+			// step in a divide-and-conquer strategy.
+			// The goal of the merging algorithm is to unify the solutions obtained in
+			// the previous step, reconciling each half into one ordered result. 
 
-			// Merging halves after both have been sorted.
+			// Merging halves after both sides have been sorted.
 			array = Merge(array, fromIndex, middleIndex, toIndex);
 
 			// Returning result.
