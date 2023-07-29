@@ -25,6 +25,10 @@ namespace MergeSort
 			 * sublists. This merging process continues until there is a single sorted list 
 			 * containing all the elements from the original unsorted list.
 			 * 
+			 * The time complexity of the merge sort algorithm is O(n*log(n)), making it efficient 
+			 * for sorting large datasets. However, it requires additional memory for the merging 
+			 * step, which may not be ideal for extremely large arrays. 
+			 * 
 			 */
 
 			int[] input = { 3, 7, 4, 8, 5, 2, 6, 8, 3, 1, 0 };
