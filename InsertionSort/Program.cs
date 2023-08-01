@@ -42,14 +42,14 @@ namespace InsertionSort
 			int[] input = { 3, 7, 4, 8, 5, 2, 6, 8, 3, 1, 0 };
 			Console.WriteLine($"Input: \t\t\t{input.ConvertToString()}");
 
-			int[] ascending = SortAscending(input);
+			int[] ascending = InsertionSortAscending(input);
 			Console.WriteLine($"Sorted ascending: \t{ascending.ConvertToString()}");
 
-			int[] descending = SortDescending(input);
+			int[] descending = InsertionSortDescending(input);
 			Console.WriteLine($"Sorted descending: \t{descending.ConvertToString()}");
 		}
 
-		private static T[] SortAscending<T>(T[] array) where T : IComparable<T> {
+		private static T[] InsertionSortAscending<T>(T[] array) where T : IComparable<T> {
 			// The algorithm starts from the second value in the array.
 			// That is because the first element is assumed to be in an
 			// ordered sub-array already, which current size is 1.
@@ -78,7 +78,7 @@ namespace InsertionSort
 			return array;
 		}
 
-		private static T[] SortDescending<T>(T[] array) where T : IComparable<T> {
+		private static T[] InsertionSortDescending<T>(T[] array) where T : IComparable<T> {
 			for (int i = 1; i < array.Length; i++) {
 				T current = array[i];
 				int j = i - 1;
